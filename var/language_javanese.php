@@ -1,0 +1,46 @@
+<?php
+//this file include mainstream variable (Bahasa Indonesia)
+$var_login = "Mlebu";
+$var_register = "Daftar";
+$var_dont_have_account = "Gak nduwe akun?";
+$var_already_have_account = "Wes nduwe akun?";
+$var_wrong_password = "Salah kata sandi:(";
+$var_not_reg = "Akun gorong kedaftar";
+$var_not_and_wrong = "Akun gorong kedaftar lek gak sampean salah nglebokno kata sandi";
+$var_wrong = "Onok seng salah";
+$var_now = "sa'iki!";
+$var_title = "Bank Rut";
+$var_footer_copyright = "© Copyright xnyhz 2017, all right reserved";
+$var_welcome = "Pinarak";
+$var_loged_out = "Sampean wes metu";
+$var_redirect = "Ngalehno halaman";
+$var_and = "lan";
+$var_for = "gawe";
+$var_user = "jeneng";
+$var_pass = "kata sandi";
+$var_or = "lek gak";
+$var_not_found = "404 halaman gak ditemokno";
+$var_err_msg_acc_true = "akun wes kedaftar";
+$var_different_pass = "Kata sandi seng sampean lebokno gak podo";
+$var_succes_msg = "Akun sampean wes morop, sa'iki sampean iso mlebu";
+$var_update = "Anyari";
+$var_account_setting = "Setelan akun";
+$var_preference_setting = "Setelan layar";
+$var_current_email = "Email panjenengan";
+$var_current_uname = "Jeneng panganggo iki";
+$var_current_pass = "Tembung sandi panjenengan saiki";
+$var_current_phone = "Nomer telpon panjenengan saiki";
+$var_theme = "Tema";
+$var_theme_normal = "Biasa";
+$var_theme_dark = "Peteng";
+$var_lang = "Basa";
+$var_english = "English";
+$var_bahasa = "Bahasa Indonesia";
+$var_jawa = "Basa Jawa";
+$var_male = "Lanang";
+$var_female = "Wadon";
+$var_normal_user = "Kedhaftar normal";
+$var_moderator = "Moderator";
+$var_admin = "Pengatur";
+$var_reset = "Reset";
+?>

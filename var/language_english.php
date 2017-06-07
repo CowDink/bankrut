@@ -1,0 +1,46 @@
+<?php
+//this file include mainstream variable (English)
+$var_login = "Login";
+$var_register = "Register";
+$var_dont_have_account = "Don't have any accounts?";
+$var_already_have_account = "Already have an account?";
+$var_wrong_password = "Wrong password :(";
+$var_not_reg = "Account not registered";
+$var_not_and_wrong = "Account is not registered or you input wrong password";
+$var_wrong = "Something went wrong";
+$var_now = "now!";
+$var_title = "Bank Rut";
+$var_footer_copyright = "© Copyright xnyhz 2017, all right reserved";
+$var_welcome = "Welcome";
+$var_loged_out = "You've been logged out";
+$var_redirect = "Redirecting the page";
+$var_and = "and";
+$var_for = "for";
+$var_user = "user";
+$var_pass = "password";
+$var_or = "or";
+$var_not_found = "404 page not found";
+$var_err_msg_acc_true = "Account or email already registered";
+$var_different_pass = "Passwords you input is different";
+$var_succes_msg = "Your account is active, now you can login";
+$var_update = "Update";
+$var_account_setting = "Account Settings";
+$var_preference_setting = "Preference Settings";
+$var_current_email = "Your current email";
+$var_current_uname = "Your current username";
+$var_current_pass = "Your current password";
+$var_current_phone = "Your current phone number";
+$var_theme = "Theme";
+$var_theme_normal = "Normal";
+$var_theme_dark = "Dark";
+$var_lang = "Language";
+$var_english = "English";
+$var_bahasa = "Bahasa Indonesia";
+$var_jawa = "Basa Jawa";
+$var_male = "Male";
+$var_female = "Female";
+$var_normal_user = "Normal user";
+$var_moderator = "Moderator";
+$var_admin = "Admin";
+$var_reset = "Reset";
+?>
