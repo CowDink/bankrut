@@ -1,5 +1,5 @@
 <?php
-	
+
 if($acc_type < 3){
 	include('content/admin/denied.php'); 
 }else{

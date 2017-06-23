@@ -9,15 +9,11 @@ function folderSize ($dir)
 }
 $ds = number_format(floor(folderSize($home_dir)/1024), 0, ',', '.');
 $all_user = array();
-$po = 0;
+$pi = 0;
 $all_user_resource = mysqli_query($koneksi, "SELECT * FROM accounts");
 
-while ($data_user = mysqli_fetch_array($all_user_resource)){ 
-	$all_user[$po] = $data_user;
-	$po++;
-}	
-  							
-$account_registered = $po;
+						
+$account_registered = mysqli_num_rows($all_user_resource);
 
 ?>
 
@@ -81,14 +77,16 @@ $account_registered = $po;
       		<form action="config/get_user_data_admin.php" method="POST">
       			<tr>
       				<td>
-      				 <input value="" list="browsers" type="search" name="username" placeholder="Search here" class="w3-input w3-left w3-middle ".$theme_body_color."" autocomplete="off">
+      				 <input value="" list="browsers" type="search" name="username" placeholder="Search accounts..." class="w3-input w3-left w3-middle ".$theme_body_color."" autocomplete="off">
   					 	<datalist id="browsers">
   							<?php
-  					     	for ($pi = 0;$pi < sizeof($all_user);$pi++){ 
+  					     	while ($data_user = mysqli_fetch_array($all_user_resource)){ 
+  								 $all_user[$pi] = $data_user;
   							 	echo '<option value="'.$all_user[$pi]['id'].'">';
   								 echo '<option value="'.$all_user[$pi]['username'].'">';
   								 echo '<option value="'.$all_user[$pi]['req'].'">';
   								 echo '<option value="'.$all_user[$pi]['email'].'">';
+  								 $pi++;
   						 	}
   							 ?>
     				  	</datalist>
@@ -99,7 +97,7 @@ $account_registered = $po;
    					 <input type="submit" name="submit" class="w3-button w3-green" value="Search" style="width:120px;"></input><!-- End Btn -->
    				  <!--</td>-->
    				  <!--<td>-->
-   				  	<p class="w3-opacity w3-medium">*Note: you can search by id, req, username, or email</p>
+   				  	<p class="w3-opacity w3-medium" id="result">*Note: you can search by id, req, username, or email</p>
    				  </td>
    			   </tr>
    			</form>
@@ -181,8 +179,8 @@ $account_registered = $po;
 						 				 <option value="2" '.(($user_search_array["account_type"] == 2)? "selected=selected":"").'>'.$var_moderator.'</option>
 										  <option value="3" '.(($user_search_array["account_type"] == 3)? "selected=selected":"").'>'.$var_admin.'</option>
 					  				</select><br>';
-								echo '<input type="submit" class="w3-button w3-left w3-green" style="width:105px;" value="'.$var_update.'"></input>';
-								echo '<input type="reset" class="w3-button w3-left w3-margin-left w3-deep-orange" style="width:105px;" value="'.$var_reset.'"></input>';
+								echo '<input type="submit" class="w3-button w3-left w3-green" style="width:130px;" value="'.$var_update.'"></input>';
+								echo '<input type="reset" class="w3-button w3-left w3-margin-left w3-deep-orange" style="width:130px;" value="'.$var_reset.'"></input>';
 								echo "</form>";
 								echo '<button class="w3-button w3-right w3-margin-top w3-red" style="width:100%;" onclick="deleteAlert()">Delete this account</button>';
 								echo '<div class="w3-container">';
@@ -203,10 +201,58 @@ $account_registered = $po;
     </div>
   </div>
 </div>
+<hr>
+<div class="w3-row-padding w3-margin-bottom w3-center">
+	<div class="w3-container">
+  	<h5>Create Account</h5>
+      <div class="w3-row">
+     	 <style>td{width:60%;}td#input{width:40%;}</style>
+     	 <div class="w3-container w3-margin-right">
+     		<form method="post" action="config/regerror.php">
 
+				<!--<h1 class="w3-opacity-min"><?=$var_register;?></h1>-->
+				
+				<input type="email" maxlength="256" name="email" placeholder="email" class="w3-input w3-center w3-middle <?=$theme_body_color?>" required/>
 
+				<input type="text" maxlength="10" name="username" placeholder="username" class="w3-input w3-center w3-middle <?=$theme_body_color?>" style="margin-top:6px;" required/>
 
-  <hr>
+				<input type="password" maxlength="30" name="password" placeholder="password" class="w3-input w3-center w3-middle <?=$theme_body_color?>" style="margin-top:6px;" required/>
+
+				<input type="password" maxlength="30" name="password2" placeholder="re-type password" class="w3-input w3-center w3-middle <?=$theme_body_color?>" style="margin-top:6px;" required/>
+
+				<input type="text" maxlength="20" name="phone" placeholder="phone (optional)" class="w3-input w3-center w3-middle <?=$theme_body_color?>" style="margin-top:6px;"/>
+
+				<select name="gender" class="w3-input w3-center w3-middle <?=$theme_body_color?>" required>
+ 				 <option value="1">Male</option>
+ 				 <option value="2">Female</option>
+				</select>
+				
+				<select name="language" class="w3-input w3-center w3-middle <?=$theme_body_color?>" required>
+ 				 <option value="1"><?=$var_english?></option>
+ 				 <option value="2"><?=$var_bahasa?></option>
+ 				 <option value="2"><?=$var_jawa?></option>
+				</select>
+				
+				<select name="theme" class="w3-input w3-center w3-middle <?=$theme_body_color?>" required>
+ 				 <option value="1"><?=$var_theme_normal?></option>
+ 				 <option value="2"><?=$var_theme_dark?></option>
+				</select>
+				
+				<select name="acc_type" class="w3-input w3-center w3-middle <?=$theme_body_color?>" required>
+ 				 <option value="1"><?=$var_normal_user?></option>
+ 				 <option value="2"><?=$var_moderator?></option>
+ 				 <option value="3"><?=$var_admin?></option>
+				</select>
+
+				<input type="submit" class="w3-button w3-green" value="<?=$var_register;?>" style="width:120px;margin-top:15px;"></input><!-- End Btn -->
+
+			</form>
+
+     	 </div>
+      </div>
+    </div>
+</div>
+<hr>
   <div class="w3-container">
     <h5>General Stats</h5>
     <p>New Visitors</p>

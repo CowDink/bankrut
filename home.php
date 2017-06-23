@@ -38,12 +38,16 @@ if(!file_exists($ppPath)){
 <title><?=$var_title?></title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
 <link rel="icon" href="assets/images/favicon.ico">
 <link rel="stylesheet" href="libraries/css/w3.css">
 <link  href="libraries/css/cropper.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="libraries/js/jquery.min.js"></script><!-- jQuery is required -->
+<!-- Latest compiled JavaScript -->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
 <script src="libraries/js/cropper.js"></script>
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
@@ -52,13 +56,13 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 <body class="<?=$theme_body_color;?>">
 
 <!-- Top container -->
-<div class="w3-bar w3-top <?=$theme_top_container;?> w3-large" style="z-index:4">
-  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+<div class="w3-bar w3-top <?=$theme_top_container;?> w3-large" style="z-index:5">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" style="margin-top:3px;" onclick="w3_open();"><i class="fa fa-bars"></i></button>
   <span class="w3-bar-item w3-right"><a href="home.php"><img src="<?=$ppPath;?>" class="w3-circle" style="width:30px;height:30px;"></img></a></span>
 </div>
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse <?=$theme_sidebar;?> w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+<nav class="w3-sidebar w3-collapse <?=$theme_sidebar;?> w3-animate-left" style="z-index:4;width:300px;" id="mySidebar"><br>
   <div class="w3-container w3-row">
     <!-- user icon -->
     <div class="w3-col s4">
@@ -112,10 +116,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   <!-- main sidebar menu -->
   <div class="w3-bar-block">
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-    <a href="home.php?page=overview" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Overview</a>
-    <a href="home.php?page=views" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  belum jadi</a>
-    <a href="home.php?page=traffic" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  belum jadi</a>
-    <a href="home.php?page=sample" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  belum jadi</a>
+    <a href="home.php?page=overview" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>&#160Overview</a>
+    <a href="home.php?page=globc" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>&#160Global Chat</a>
+    <a href="home.php?page=traffic" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>&#160belum jadi</a>
+    <a href="home.php?page=sample" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>&#160belum jadi</a>
     <audio src="assets/audio/main.ogg" controls autoplay loop>
 		audio is not supported
 	</audio>
@@ -124,7 +128,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
 
 <!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer;z-index:3;" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-main top" style="margin-left:300px;margin-top:43px;">
@@ -165,8 +169,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
 <script>
 	
-//$(document).ready(function() {
+	$(document).ready(function() {
    // jQuery code goes here
+    // alert ("hy");
+    });
 
 // Get the Sidebar
 var mySidebar = document.getElementById("mySidebar");
@@ -190,7 +196,7 @@ function w3_close() {
     mySidebar.style.display = "none";
     overlayBg.style.display = "none";
 }
-//});
+
 </script>
 
 </body>

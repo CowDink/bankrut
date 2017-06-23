@@ -1,5 +1,11 @@
 <?php
- 
+/** hostinger
+$user_name = "u135667435_admin";
+$password = "zIswym2nbz44";
+$database = "u135667435_bank";
+$host_name = "mysql.idhostinger.com";
+*/
+
 $user_name = "root";
 $password = "";
 $database = "bank";
