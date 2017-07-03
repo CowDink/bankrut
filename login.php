@@ -46,7 +46,7 @@ require_once('config/client_lang.php');
 <div class="w3-container" style="margin: 0 auto 0 auto;padding:0px 0px 70px 0px;width:200px;">
 	<h4>You may also like</h4>
 	<ul align="left">
-		<li><a href="jump_box/index.html">Jump Box</a></li>
+		<li><a href="halal-checker">Halal Checker</a></li>
 	</ul>
 	
 </div>

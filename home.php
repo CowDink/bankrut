@@ -126,7 +126,6 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   </div><!-- end of main sidebar menu -->
 </nav><!-- end of sidebar menu -->
 
-
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer;z-index:3;" title="close side menu" id="myOverlay"></div>
 
@@ -161,7 +160,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   <!-- Footer -->
   <footer class="w3-container w3-padding-16 <?=$theme_sidebar;?>">
     <h6><?=$var_footer_copyright?></h6>
-    <p><a href="#top">kembali ke atas</a></p>
+    <p><a href="#top" id="footer">kembali ke atas</a></p>
   </footer>
 
   <!-- End page content -->
@@ -173,13 +172,11 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
    // jQuery code goes here
     // alert ("hy");
     });
-
 // Get the Sidebar
 var mySidebar = document.getElementById("mySidebar");
 
 // Get the DIV with overlay effect
 var overlayBg = document.getElementById("myOverlay");
-
 // Toggle between showing and hiding the sidebar, and add overlay effect
 function w3_open() {
     if (mySidebar.style.display === 'block') {
@@ -196,7 +193,6 @@ function w3_close() {
     mySidebar.style.display = "none";
     overlayBg.style.display = "none";
 }
-
 </script>
 
 </body>

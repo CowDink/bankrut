@@ -63,10 +63,13 @@ if($action == "send"){
 	$date_crat = $crat->format('Y-m-d H:i:s');
 	$pesan = $_POST['isi'];
 	mysqli_query($koneksi, "INSERT INTO global_chat (id_sender, body, sended_at) VALUES ('$sender_id', '$pesan', '$date_crat')");
-}else{
+}
+
+
 	$show = mysqli_query($koneksi, "SELECT * FROM global_chat ORDER BY id DESC LIMIT 100");
 	while($sunder_data = mysqli_fetch_array($show)){
 	$sunder_id = $sunder_data['id_sender'];
+	$chat_id = $sunder_data['id'];
 	$sunder_info = mysqli_query($koneksi, "SELECT * FROM accounts WHERE id='$sunder_id'");
 	$sunder_array = mysqli_fetch_array($sunder_info);
 	$sunder_crat = $sunder_data['sended_at'];
@@ -102,7 +105,7 @@ if($action == "send"){
 		$panel_color = "w3-green";
 		$added_bar = '<div class="w3-gray">
 		   	<span class="w3-bar-item w3-right"><a href="home.php"><i class="fa fa-trash" style="color:#930006;"></i></a></span>
-			   <span class="w3-bar-item w3-margin-right w3-right"><a href="home.php"><i class="fa fa-pencil" style="color:#FFD500;"></i></a></span>
+			   <span class="w3-bar-item w3-margin-right w3-right pencil"><a href="javascript:void(0)"><i class="fa fa-pencil" style="color:#FFD500;"></i></a></span>
 			   </div>';
 	}else{
 		$added_bar = '<div class="w3-gray">
@@ -116,6 +119,15 @@ if($action == "send"){
 			$panel_color = "w3-pink";
 		}
 	}
+	/**
+	$script = '<script>
+				$(function(){
+			   	$("#pencil").click(function(){
+				   	alert("test");
+			       });
+			    });
+			   </script>';
+	*/
 	
 	echo '
 		<div class=" w3-padding '.$panel_color.' w3-round w3-panel" style="height:60%;">
@@ -126,6 +138,5 @@ if($action == "send"){
    		 '.$added_bar.'
 		</div>';
 	}
-}
 
 ?>
